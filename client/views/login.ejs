@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Code Editor</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+    <div class="mobile"><h2>This is a desktop application only</h2></div>
+    <div class="login-container">
+        <h2>Welcome to Code Editor</h2>
+        <% if (messages.error) { %>
+            <div class="login-fail">
+                <%= messages.error %>
+            </div>
+        <% } %>
+        <form id="loginForm" action="/login" method="post">
+            <input type="email" placeholder="Email" name="email" required>
+            <input type="password" placeholder="Password" name="password" required>
+            <button type="submit">Log In</button>
+        </form>
+        <div class="toggle-form">
+            <p>Don't have an account? <a href="/register">Sign up</a></p>
+        </div>
+    </div>
+</body>
+</html>

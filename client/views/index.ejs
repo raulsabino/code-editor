@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Editor</title>
+  <link rel="stylesheet" type="text/css" href="/css/editor-styles.css">
+</head>
+<body>
+  <div class="mobile"><h2>This is a desktop application only</h2></div>
+  <div class="menu-bar">
+    <div class="logo">Code Editor</div>
+    <div class="menu-links">
+      <a href="/logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+      <form id="logout-form" action="/logout?_method=DELETE" method="POST" style="display: none;"></form>
+      <a href="#" onclick="saveCode(); return false;">Save</a>
+    </div>
+  </div>
+  <div class="container">
+    <div class="editor-section">
+      <div class="tab-container">
+        <button class="tab active" onclick="switchTab('html')">HTML</button>
+        <button class="tab" onclick="switchTab('css')">CSS</button>
+        <button class="tab" onclick="switchTab('js')">JavaScript</button>
+        <button class="tab" onclick="switchTab('console')">Console</button>
+      </div>
+      <div class="editor-options">
+        <select id="keyboardHandler" onchange="changeKeyboardHandler()">
+          <option value="ace">Default</option>
+          <option value="vim">Vim</option>
+          <option value="emacs">Emacs</option>
+        </select>
+      </div>
+      <div class="editor-container">
+        <div id="html-editor" class="editor"></div>
+        <div id="css-editor" class="editor" style="display:none;"></div>
+        <div id="js-editor" class="editor" style="display:none;"></div>
+        <div id="text-area" class="console"></div>
+      </div>
+    </div>
+    <div class="resizer"></div>
+    <div class="preview-container">
+      <iframe id="preview-frame" class="preview-frame"></iframe>
+      <button id="run-button" onclick="updatePreview()">Run</button>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

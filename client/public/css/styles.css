@@ -1,0 +1,145 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #21252B;
+  color: #ABB2BF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* display nothing for the mobile version unless */
+
+.mobile{
+  display: none;
+}
+
+/* styling for the login/register page windows, input tags and buttons */
+
+.floating-window {
+  background-color: #282C34;
+  border-radius: 9px;
+  padding: 35px;
+  width: 420px;
+}
+
+.button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.3s;
+}
+
+.logout-btn {
+  background-color: #83A768;
+  color: #282C34;
+  margin-bottom: 14px;
+  font-weight: bold;
+}
+
+.logout-btn:hover {
+  background-color: #93B778;
+}
+
+.logout-btn {
+  margin-bottom: 0;
+}
+
+.login-container {
+  background-color: #282C34;
+  border-radius: 8px;
+  padding: 3.5rem;
+  width: 450px;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 1.3rem;
+  color: #ABB2BF;
+  text-align: center;
+  font-size: 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin-bottom: 1rem;
+  padding: 0.6rem;
+  border: 1px solid #2C313A;
+  background-color: #2C313A;
+  color: #ABB2BF;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: #282C34;
+}
+
+button {
+  background-color: #81A566;
+  color: #282C34;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+  font-size: 0.95rem;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #9CBC7C;
+}
+
+.toggle-form {
+  margin-top: 1.3rem;
+  text-align: center;
+}
+
+.toggle-form p {
+  font-size: 1rem;
+}
+
+.toggle-form a {
+  color: #81A566;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.toggle-form a:hover {
+  text-decoration: underline;
+}
+
+.login-fail{
+  margin-bottom: 10px;
+  color: #ABB2BF;
+}
+
+/* display the message that this is only available for desktop in the mobile view */
+@media screen and (max-width: 1279px) {
+  .login-container {
+    display: none;
+  }
+  
+  .mobile {
+    display: block;
+  }
+
+  h2 {
+    margin-bottom: 0px;
+    margin-top: auto;
+  }
+}
