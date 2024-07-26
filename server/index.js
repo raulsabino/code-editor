@@ -10,6 +10,7 @@ const flash = require('express-flash');
 const session = require('express-session');
 const methodOverride = require('method-override');
 const mongoose = require('mongoose');
+const MongoStore = require('connect-mongo');
 
 const app = express();
 const port = process.env.PORT || 8000;
@@ -38,11 +39,13 @@ app.set('views', path.join(__dirname, '../client/views'));
 app.set('view-engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(flash());
+app.enable('trust proxy');
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
-  cookie: { secure: process.env.NODE_ENV === 'production' }
+  proxy: true,
+  cookie: { secure: process.env.NODE_ENV === 'production', maxAge: 60000, store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }) }
 }));
 app.use(passport.initialize());
 app.use(passport.session());
