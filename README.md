@@ -29,6 +29,6 @@ This project is an online code editor designed to allow users to write, edit, an
 
 ### [Live Site](https://code-editor-j3fo.onrender.com)
 
-Note that due to server inactivity the website might need 50 seconds or more to load. You can also register yourself to test out the registration functionality, but if you do not want to use the following email and password for login. Also note that the webisite code saved under this user was not done by me it was just a codepen I got for testing purposes (https://codepen.io/RAFA3L/pen/RwOMEEa).
+Note that due to server inactivity the website might need 50 seconds or more to load. You can also register yourself to test out the registration functionality, but if you do not want to use the following email and password for login.
 - email: test@test.com
 - password: test
